@@ -36,6 +36,7 @@ function crearProductos(titulo, precio, imagen, id) {
 
   misProductos.appendChild(productoItem);
   return productoItem;
+
 }
 
 const render = async () => {
@@ -75,6 +76,16 @@ formulario.addEventListener("submit", async (event) => {
   } catch (error) {
     console.error("Error al crear el producto:", error);
   }
+
+  
+  limpiarForm();
 });
 
 render();
+
+const limpiarForm = () => {
+  document.querySelector("[data-titulo]").value = "";
+  document.querySelector("[data-precio]").value = "";
+  document.querySelector("[data-imagen]").value = "";
+};
+
